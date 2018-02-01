@@ -1,0 +1,16 @@
+<div  *ngFor="let Item of portfolioItems" class="col s12 m7">
+   <h2 class="header">Card {{Item.id}} </h2>
+   <div class="card horizontal">
+     <div class="card-image">
+       <img src="assets/images/{{Item.path}}">
+     </div>
+     <div class="card-stacked">
+       <div class="card-content">
+         <p>{{Item.name}} </p>
+       </div>
+       <div class="card-action">
+         <a href="#">This is a link</a>
+       </div>
+     </div>
+   </div>
+ </div>

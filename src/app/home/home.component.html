@@ -1,0 +1,29 @@
+<h1>Home sweet home!</h1>
+
+<div  *ngFor="let Item of portfolioItems"  class="card col s12 m3"
+      [class.selected]="Item === selectedPortfolioItems"
+      (click)="onSelect(Item)">
+  <div class="card-image waves-effect waves-block waves-light">
+    <img class="activator" src="assets/images/{{Item.path}}">
+  </div>
+  <div class="card-content">
+    <span class="card-title activator grey-text text-darken-4">Card {{Item.id}}<i class="material-icons right">more_vert</i></span>
+    <p><a href="#" routerLink="/detail/{{Item.id}}">Detail</a></p>
+  </div>
+  <div class="card-reveal">
+    <span class="card-title grey-text text-darken-4">Card Title<i class="material-icons right">close</i></span>
+    <p>Here is some more information about this product that is only revealed once clicked on.</p>
+  </div>
+</div>
+
+<div *ngIf="selectedPortfolioItems" class="card col s12 m12">
+
+  <h2>{{ selectedPortfolioItems.name | uppercase }}</h2>
+  <div><span>id: </span>{{selectedPortfolioItems.id}}</div>
+  <div>
+    <label>name:
+      <input [(ngModel)]="selectedPortfolioItems.name" placeholder="name">
+    </label>
+  </div>
+
+</div>
